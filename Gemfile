@@ -32,6 +32,9 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
+gem 'react-rails'
+gem "font-awesome-rails"
+
 
 
 # Use Capistrano for deployment
