@@ -14,9 +14,18 @@
   </div>
   <select class="custom-select" id="inputGroupSelect01">
     <option selected>Choose...</option>
-    <option value="2017">2017</option>
-    <option value="2018">2018</option>
-    <option value="2019">2019</option>
+    <option value="<%= (Date.today - 5.years).year %>"><%= (Date.today - 5.years).year %></option>
+    <option value="<%= (Date.today - 4.years).year %>"><%= (Date.today - 4.years).year %></option>
+    <option value="<%= (Date.today - 3.years).year %>"><%= (Date.today - 3.years).year %></option>
+    <option value="<%= (Date.today - 2.years).year %>"><%= (Date.today - 2.years).year %></option>
+    <option value="<%= (Date.today - 1.years).year %>"><%= (Date.today - 1.years).year %></option>
+    <option value="<%= Date.today.year %>"><%= Date.today.year %></option>
+    <option value="<%= (Date.today + 1.years).year %>"><%= (Date.today + 1.years).year %></option>
+    <option value="<%= (Date.today + 2.years).year %>"><%= (Date.today + 2.years).year %></option>
+    <option value="<%= (Date.today + 3.years).year %>"><%= (Date.today + 3.years).year %></option>
+    <option value="<%= (Date.today + 4.years).year %>"><%= (Date.today + 4.years).year %></option>
+    <option value="<%= (Date.today + 5.years).year %>"><%= (Date.today + 5.years).year %></option>
+    <option value="<%= (Date.today + 6.years).year %>"><%= (Date.today + 6.years).year %></option>
   </select>
 </div>
 
