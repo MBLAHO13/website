@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'react-rails'
+gem 'webpacker', '~> 3.4'
 gem "font-awesome-rails"
 
 
