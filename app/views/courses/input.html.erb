@@ -7,6 +7,13 @@
   </button>
 </div>
 
+<%= form_tag view_degree_path do %>
+  <%= render 'term', index: 0 %>
+
+  <%= button_tag 'Add more', type: 'button', id: 'add-term', data: { term: render('term', index: '__INDEX__').gsub('\n', '') } %>
+  <%= submit_tag 'Submit' %>
+
+<% end %>
 
 <div class="input-group mb-3">
   <div class="input-group-prepend">

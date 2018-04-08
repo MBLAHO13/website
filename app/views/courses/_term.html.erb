@@ -1,0 +1,89 @@
+<fieldset>
+  <%= fields_for :courses do |f| %>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <%= f.label :year, "Year:", class: "input-group-text control-label" %>
+      </div>
+      <%= f.select(:score, getYearsArray, {}, {class: "custom-select"}) %>
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <%= f.label :term, "Term:", class: "input-group-text control-label" %>
+      </div>
+      <%= f.select(:score, getYearsArray, {}, {class: "custom-select"}) %>
+    </div>
+
+    <div class="form-group">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= f.label :course1, "Course 1:", class: "input-group-text control-label" %>
+        </div>
+        <%= f.text_field :course1, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= f.label :course2, "Course 2:", class: "input-group-text control-label" %>
+        </div>
+        <%= f.text_field :course2, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= f.label :course2, "Course 2:", class: "input-group-text control-label" %>
+        </div>
+        <%= f.text_field :course2, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= f.label :course3, "Course 3:", class: "input-group-text control-label" %>
+        </div>
+        <%= f.text_field :course3, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= f.label :course4, "Course 4:", class: "input-group-text control-label" %>
+        </div>
+        <%= f.text_field :course4, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= f.label :course5, "Course 5:", class: "input-group-text control-label" %>
+        </div>
+        <%= f.text_field :course5, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= f.label :course6, "Course 6:", class: "input-group-text control-label" %>
+        </div>
+        <%= f.text_field :course6, class: "form-control" %>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= f.label :course7, "Course 7:", class: "input-group-text control-label" %>
+        </div>
+        <%= f.text_field :course7, class: "form-control" %>
+      </div>
+    </div>
+  <% end %>
+</fieldset>
