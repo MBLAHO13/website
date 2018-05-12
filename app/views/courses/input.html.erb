@@ -7,96 +7,99 @@
   </button>
 </div>
 
-<%= form_tag view_degree_path do %>
-  <%= render 'term', index: 0 %>
+<br>
+<%= form_tag view_degree_path do |f| %>
+  <div class="terms">
+    <div class="row" id="clone0">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text">Year</label>
+        </div>
+        <%= select_tag 'terms[year][]', options_for_select(getYearsArray, Date.today.year), {class: "custom-select", selected:Date.today.year} %>
+      </div>
 
-  <%= button_tag 'Add more', type: 'button', id: 'add-term', data: { term: render('term', index: '__INDEX__').gsub('\n', '') } %>
-  <%= submit_tag 'Submit' %>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text">Term</label>
+        </div>
+        <%= select_tag 'terms[term][]', options_for_select(getTermsArray), {class: "custom-select"} %>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend" id="course">
+            <span class="input-group-text" id="inputGroup-sizing-default">Course 1</span>
+          </div>
+          <%= text_field_tag 'terms[course1][]', '', class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend" id="course">
+            <span class="input-group-text" id="inputGroup-sizing-default">Course 2</span>
+          </div>
+          <%= text_field_tag 'terms[course2][]', '', class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend" id="course">
+            <span class="input-group-text" id="inputGroup-sizing-default">Course 3</span>
+          </div>
+          <%= text_field_tag 'terms[course3][]', '', class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend" id="course">
+            <span class="input-group-text" id="inputGroup-sizing-default">Course 4</span>
+          </div>
+          <%= text_field_tag 'terms[course4][]', '', class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend" id="course">
+            <span class="input-group-text" id="inputGroup-sizing-default">Course 5</span>
+          </div>
+          <%= text_field_tag 'terms[course5][]', '', class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend" id="course">
+            <span class="input-group-text" id="inputGroup-sizing-default">Course 6</span>
+          </div>
+          <%= text_field_tag 'terms[course6][]', '', class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend" id="course">
+            <span class="input-group-text" id="inputGroup-sizing-default">Course 7</span>
+          </div>
+          <%= text_field_tag 'terms[course7][]', '', class: "form-control" %>
+        </div>
+      </div>
+
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-success btn-add" id="add-term">
+          <span>Add Another Term</span>
+        </button>
+        <br>
+        <br>
+      </span>
+
+    </div>
+  </div>
+
+  <%= submit_tag 'Submit', class:"btn btn-info" %>
 
 <% end %>
-
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <label class="input-group-text" for="inputGroupSelect01">Year</label>
-  </div>
-  <select class="custom-select" id="inputGroupSelect01">
-    <option selected>Choose...</option>
-    <option value="<%= (Date.today - 5.years).year %>"><%= (Date.today - 5.years).year %></option>
-    <option value="<%= (Date.today - 4.years).year %>"><%= (Date.today - 4.years).year %></option>
-    <option value="<%= (Date.today - 3.years).year %>"><%= (Date.today - 3.years).year %></option>
-    <option value="<%= (Date.today - 2.years).year %>"><%= (Date.today - 2.years).year %></option>
-    <option value="<%= (Date.today - 1.years).year %>"><%= (Date.today - 1.years).year %></option>
-    <option value="<%= Date.today.year %>"><%= Date.today.year %></option>
-    <option value="<%= (Date.today + 1.years).year %>"><%= (Date.today + 1.years).year %></option>
-    <option value="<%= (Date.today + 2.years).year %>"><%= (Date.today + 2.years).year %></option>
-    <option value="<%= (Date.today + 3.years).year %>"><%= (Date.today + 3.years).year %></option>
-    <option value="<%= (Date.today + 4.years).year %>"><%= (Date.today + 4.years).year %></option>
-    <option value="<%= (Date.today + 5.years).year %>"><%= (Date.today + 5.years).year %></option>
-    <option value="<%= (Date.today + 6.years).year %>"><%= (Date.today + 6.years).year %></option>
-  </select>
-</div>
-
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <label class="input-group-text" for="inputGroupSelect01">Term</label>
-  </div>
-  <select class="custom-select" id="inputGroupSelect01">
-    <option selected>Choose...</option>
-    <option value="Fa">Fall</option>
-    <option value="Wi">Winter</option>
-    <option value="Sp">Spring</option>
-    <option value="Su">Summer</option>
-  </select>
-</div>
-
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-default">Course 1</span>
-  </div>
-  <input type="text" class="form-control" aria-label="Course" aria-describedby="inputGroup-sizing-default">
-</div>
-
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-default">Course 2</span>
-  </div>
-  <input type="text" class="form-control" aria-label="Course" aria-describedby="inputGroup-sizing-default">
-</div>
-
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-default">Course 3</span>
-  </div>
-  <input type="text" class="form-control" aria-label="Course" aria-describedby="inputGroup-sizing-default">
-</div>
-
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-default">Course 4</span>
-  </div>
-  <input type="text" class="form-control" aria-label="Course" aria-describedby="inputGroup-sizing-default">
-</div>
-
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-default">Course 5</span>
-  </div>
-  <input type="text" class="form-control" aria-label="Course" aria-describedby="inputGroup-sizing-default">
-</div>
-
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-default">Course 6</span>
-  </div>
-  <input type="text" class="form-control" aria-label="Course" aria-describedby="inputGroup-sizing-default">
-</div>
-
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-default">Course 7</span>
-  </div>
-  <input type="text" class="form-control" aria-label="Course" aria-describedby="inputGroup-sizing-default">
-</div>
-
-<a href="#" class="btn btn-primary btn-md active" role="button" aria-pressed="true">Add Another Term</a>
-<a href="#" class="btn btn-secondary btn-md active" role="button" aria-pressed="true">Done</a>

@@ -2,7 +2,7 @@
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#degreeCompletionModal">
-  Compare Degrees
+  Compare Degree Completion
 </button>
 <br>
 <!-- Modal -->
@@ -49,13 +49,11 @@
 <br>
 <!-- Modal -->
 
-
-
 <br>
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Fa2018</th>
+      <th scope="col">EX20XX</th>
       <th scope="col">Class</th>
       <th scope="col">Title</th>
     </tr>
@@ -81,89 +79,93 @@
   </tbody>
 </table>
 
-<br>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Wi2018</th>
-      <th scope="col">Class</th>
-      <th scope="col">Title</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>CS 171</td>
-      <td>CS 171 Title</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>PHYS 101</td>
-      <td>Physics</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>ENGL 101</td>
-      <td>English</td>
-    </tr>
-  </tbody>
-</table>
 
-<br>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Su2018</th>
-      <th scope="col">Class</th>
-      <th scope="col">Title</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>CS 171</td>
-      <td>CS 171 Title</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>PHYS 101</td>
-      <td>Physics</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>ENGL 101</td>
-      <td>English</td>
-    </tr>
-  </tbody>
-</table>
 
-<br>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Fa2019</th>
-      <th scope="col">Class</th>
-      <th scope="col">Title</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>CS 171</td>
-      <td>CS 171 Title</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>PHYS 101</td>
-      <td>Physics</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>ENGL 101</td>
-      <td>English</td>
-    </tr>
-  </tbody>
-</table>
+<% for i in 0..params[:terms][:year].length-1 do %>
+  <br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col"> <%= params[:terms][:term].at(i) %> <%= params[:terms][:year].at(i) %></th>
+        <th scope="col">Class</th>
+        <th scope="col">Title</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <% if params[:terms][:course1].at(i).empty? %>
+          <td> - </td>
+          <td> - </td>
+        <% else %>
+          <td><%= params[:terms][:course1].at(i) %></td>
+          <td><%= params[:terms][:course1].at(i) %> Title</td>
+        <% end %>
+
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <% if params[:terms][:course2].at(i).empty? %>
+          <td> - </td>
+          <td> - </td>
+        <% else %>
+          <td><%= params[:terms][:course2].at(i) %></td>
+          <td><%= params[:terms][:course2].at(i) %> Title</td>
+        <% end %>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <% if params[:terms][:course3].at(i).empty? %>
+          <td> - </td>
+          <td> - </td>
+        <% else %>
+          <td><%= params[:terms][:course3].at(i) %></td>
+          <td><%= params[:terms][:course3].at(i) %> Title</td>
+        <% end %>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <% if params[:terms][:course4].at(i).empty? %>
+          <td> - </td>
+          <td> - </td>
+        <% else %>
+          <td><%= params[:terms][:course4].at(i) %></td>
+          <td><%= params[:terms][:course4].at(i) %> Title</td>
+        <% end %>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <% if params[:terms][:course5].at(i).empty? %>
+          <td> - </td>
+          <td> - </td>
+        <% else %>
+          <td><%= params[:terms][:course5].at(i) %></td>
+          <td><%= params[:terms][:course5].at(i) %> Title</td>
+        <% end %>
+      </tr>
+      <tr>
+        <th scope="row">6</th>
+        <% if params[:terms][:course6].at(i).empty? %>
+          <td> - </td>
+          <td> - </td>
+        <% else %>
+          <td><%= params[:terms][:course6].at(i) %></td>
+          <td><%= params[:terms][:course6].at(i) %> Title</td>
+        <% end %>
+      </tr>
+      <tr>
+        <th scope="row">7</th>
+        <% if params[:terms][:course7].at(i).empty? %>
+          <td> - </td>
+          <td> - </td>
+        <% else %>
+          <td><%= params[:terms][:course7].at(i) %></td>
+          <td><%= params[:terms][:course7].at(i) %> Title</td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
+<% end %>
 
 
 <button type="button" class="btn btn-success">Import Plan</button>

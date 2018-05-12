@@ -30,3 +30,40 @@ $('#courseInfoModal').on('show.bs.modal', function (event) {
   modal.find('.modal-title').text('New message to ' + recipient)
   modal.find('.modal-body input').val(recipient)
 })
+
+$(function()
+{
+  $(document).on('click', '.btn-add#add-term', function(e)
+  {
+    e.preventDefault();
+    var termRow = $('.terms'),
+        rowCounter = termRow.children().length;
+
+    var lastEle = $(termRow.children()[rowCounter-1]);
+    var lastNum = parseInt(lastEle.attr("id").replace("clone",""));
+
+    var currentEntry = $('#clone' + lastNum),
+        newEntry = $(currentEntry.clone());
+
+    lastNum++;
+    newEntry.attr("id", "clone" + lastNum);
+
+    newEntry.appendTo(termRow);
+
+    newEntry.find('input').val('');
+    termRow.find('.row:not(:last) .btn-add')
+        .removeClass('btn-add').addClass('btn-remove')
+        .removeClass('btn-success').addClass('btn-danger')
+        .html('<span>Delete This Term</span>');
+  }).on('click', '.btn-remove', function(e) {
+    if($('.cons').children().length == 2)
+    {
+      $(this).parents('.row:first').remove();
+      $(this).parents('.row:first').attr("id", "clone0");
+    }
+    $(this).parents('.row:first').remove();
+
+    e.preventDefault();
+    return false;
+  })
+});
