@@ -2,7 +2,7 @@
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#degreeCompletionModal">
-  Compare Degrees
+  Compare Degree Completion
 </button>
 <br>
 <!-- Modal -->
@@ -49,13 +49,11 @@
 <br>
 <!-- Modal -->
 
-
-
 <br>
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Fa2018</th>
+      <th scope="col">EX20XX</th>
       <th scope="col">Class</th>
       <th scope="col">Title</th>
     </tr>
@@ -64,13 +62,15 @@
     <tr>
       <th scope="row">1</th>
       <td>
-        <a data-toggle="modal" data-target="#exampleModal" href="">CS 171</a>
+        <a class="course-more-info" data-toggle="modal" data-target="#courseInfoModal" data-whatever="@mdo" href="">CS 171</a>
       </td>
       <td>CS 171 Title</td>
     </tr>
     <tr>
       <th scope="row">2</th>
-      <td>PHYS 101</td>
+      <td>
+        <a class="course-more-info" data-toggle="modal" data-target="#courseInfoModal" data-whatever="@mdo" href="">CS 265</a>
+      </td>
       <td>Physics</td>
     </tr>
     <tr>
@@ -81,89 +81,49 @@
   </tbody>
 </table>
 
-<br>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Wi2018</th>
-      <th scope="col">Class</th>
-      <th scope="col">Title</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>CS 171</td>
-      <td>CS 171 Title</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>PHYS 101</td>
-      <td>Physics</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>ENGL 101</td>
-      <td>English</td>
-    </tr>
-  </tbody>
-</table>
 
-<br>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Su2018</th>
-      <th scope="col">Class</th>
-      <th scope="col">Title</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>CS 171</td>
-      <td>CS 171 Title</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>PHYS 101</td>
-      <td>Physics</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>ENGL 101</td>
-      <td>English</td>
-    </tr>
-  </tbody>
-</table>
 
-<br>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Fa2019</th>
-      <th scope="col">Class</th>
-      <th scope="col">Title</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>CS 171</td>
-      <td>CS 171 Title</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>PHYS 101</td>
-      <td>Physics</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>ENGL 101</td>
-      <td>English</td>
-    </tr>
-  </tbody>
-</table>
+<% for i in 0..params[:terms][:year].length-1 do %>
+  <br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col"> <%= params[:terms][:term].at(i) %> <%= params[:terms][:year].at(i) %></th>
+        <th scope="col">Class</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+          <td><%= params[:terms][:course1].at(i) %></td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+          <td><%= params[:terms][:course2].at(i) %></td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+          <td><%= params[:terms][:course3].at(i) %></td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+          <td><%= params[:terms][:course4].at(i) %></td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+          <td><%= params[:terms][:course5].at(i) %></td>
+      </tr>
+      <tr>
+        <th scope="row">6</th>
+          <td><%= params[:terms][:course6].at(i) %></td>
+      </tr>
+      <tr>
+        <th scope="row">7</th>
+          <td><%= params[:terms][:course7].at(i) %></td>
+      </tr>
+    </tbody>
+  </table>
+<% end %>
 
 
 <button type="button" class="btn btn-success">Import Plan</button>
@@ -172,8 +132,8 @@
 <br>
 <br><br><br><br><br>
 
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Course info modal -->
+<div class="modal fade" id="courseInfoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -187,24 +147,20 @@
 
           <tbody>
             <tr>
-              <th scope="row">Class</th>
-              <td>CS 171</td>
+              <th scope="row">Course</th>
+              <td id="modal-course">-</td>
             </tr>
             <tr>
               <th scope="row">Title</th>
-              <td>CS 171 Title</td>
+              <td id="modal-title">-</td>
             </tr>
             <tr>
               <th scope="row">Description</th>
-              <td>Introduces fundamental concepts of computing including memory, instructions, function calls, and activation records. Covers fundamentals of structured computer programming in the language of instruction: variables, input and output, expressions, assignment statements, conditionals and branching, subprograms, parameter passing, repetition, arrays, top-down design, testing, and debugging.</td>
+              <td id="modal-description">-</td>
             </tr>
             <tr>
-              <th scope="row">Prerequisites</th>
-              <td>-</td>
-            </tr>
-            <tr>
-              <th scope="row">Prerequisite For</th>
-              <td>-</td>
+              <th scope="row">Restrictions</th>
+              <td id="modal-restrictions">-</td>
             </tr>
 
           </tbody>
