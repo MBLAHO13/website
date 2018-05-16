@@ -1,5 +1,12 @@
 <h1>My Classes</h1>
 
+<div class="float-right" id="upload">
+  <button type="button" class="btn btn-info" id="download">
+    <i class="fas fa-upload"></i>
+    Export Existing Plan
+  </button>
+</div>
+
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#degreeCompletionModal">
   Compare Degree Completion
@@ -45,9 +52,6 @@
 </div>
 
 
-<!-- Button trigger modal -->
-<br>
-<!-- Modal -->
 
 <br>
 <table class="table">
@@ -95,31 +99,45 @@
     <tbody>
       <tr>
         <th scope="row">1</th>
-          <td><%= params[:terms][:course1].at(i) %></td>
+          <td>
+            <a class="course-more-info" data-toggle="modal" data-target="#courseInfoModal" data-whatever="@mdo" href=""><%= params[:terms][:course1].at(i) %></a>
+          </td>
       </tr>
       <tr>
         <th scope="row">2</th>
-          <td><%= params[:terms][:course2].at(i) %></td>
+          <td>
+            <a class="course-more-info" data-toggle="modal" data-target="#courseInfoModal" data-whatever="@mdo" href=""><%= params[:terms][:course2].at(i) %></a>
+          </td>
       </tr>
       <tr>
         <th scope="row">3</th>
-          <td><%= params[:terms][:course3].at(i) %></td>
+          <td>
+            <a class="course-more-info" data-toggle="modal" data-target="#courseInfoModal" data-whatever="@mdo" href=""><%= params[:terms][:course3].at(i) %></a>
+          </td>
       </tr>
       <tr>
         <th scope="row">4</th>
-          <td><%= params[:terms][:course4].at(i) %></td>
+          <td>
+            <a class="course-more-info" data-toggle="modal" data-target="#courseInfoModal" data-whatever="@mdo" href=""><%= params[:terms][:course4].at(i) %></a>
+          </td>
       </tr>
       <tr>
         <th scope="row">5</th>
-          <td><%= params[:terms][:course5].at(i) %></td>
+          <td>
+            <a class="course-more-info" data-toggle="modal" data-target="#courseInfoModal" data-whatever="@mdo" href=""><%= params[:terms][:course5].at(i) %></a>
+          </td>
       </tr>
       <tr>
         <th scope="row">6</th>
-          <td><%= params[:terms][:course6].at(i) %></td>
+          <td>
+            <a class="course-more-info" data-toggle="modal" data-target="#courseInfoModal" data-whatever="@mdo" href=""><%= params[:terms][:course6].at(i) %></a>
+          </td>
       </tr>
       <tr>
         <th scope="row">7</th>
-          <td><%= params[:terms][:course7].at(i) %></td>
+          <td>
+            <a class="course-more-info" data-toggle="modal" data-target="#courseInfoModal" data-whatever="@mdo" href=""><%= params[:terms][:course7].at(i) %></a>
+          </td>
       </tr>
     </tbody>
   </table>
