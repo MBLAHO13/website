@@ -8,7 +8,7 @@
 </div>
 
 <br>
-<%= form_tag view_degree_path do |f| %>
+<%= form_tag '/view/degree', method: :get do %>
   <div class="terms">
     <div class="row" id="clone0">
       <div class="input-group mb-3">
@@ -17,7 +17,6 @@
         </div>
         <%= select_tag 'terms[year][]', options_for_select(getYearsArray, Date.today.year), {class: "custom-select", selected:Date.today.year} %>
       </div>
-
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -31,7 +30,7 @@
           <div class="input-group-prepend" id="course">
             <span class="input-group-text" id="inputGroup-sizing-default">Course 1</span>
           </div>
-          <%= text_field_tag 'terms[course1][]', '', class: "form-control" %>
+          <%= text_field_tag 'terms[course1][]', '', class: "form-control", id: "course-input-field"%>
         </div>
       </div>
 
@@ -40,7 +39,7 @@
           <div class="input-group-prepend" id="course">
             <span class="input-group-text" id="inputGroup-sizing-default">Course 2</span>
           </div>
-          <%= text_field_tag 'terms[course2][]', '', class: "form-control" %>
+          <%= text_field_tag 'terms[course2][]', '', class: "form-control", id: "course-input-field"%>
         </div>
       </div>
 
@@ -49,7 +48,7 @@
           <div class="input-group-prepend" id="course">
             <span class="input-group-text" id="inputGroup-sizing-default">Course 3</span>
           </div>
-          <%= text_field_tag 'terms[course3][]', '', class: "form-control" %>
+          <%= text_field_tag 'terms[course3][]', '', class: "form-control", id: "course-input-field"%>
         </div>
       </div>
 
@@ -58,7 +57,7 @@
           <div class="input-group-prepend" id="course">
             <span class="input-group-text" id="inputGroup-sizing-default">Course 4</span>
           </div>
-          <%= text_field_tag 'terms[course4][]', '', class: "form-control" %>
+          <%= text_field_tag 'terms[course4][]', '', class: "form-control", id: "course-input-field"%>
         </div>
       </div>
 
@@ -67,7 +66,7 @@
           <div class="input-group-prepend" id="course">
             <span class="input-group-text" id="inputGroup-sizing-default">Course 5</span>
           </div>
-          <%= text_field_tag 'terms[course5][]', '', class: "form-control" %>
+          <%= text_field_tag 'terms[course5][]', '', class: "form-control", id: "course-input-field"%>
         </div>
       </div>
 
@@ -76,7 +75,7 @@
           <div class="input-group-prepend" id="course">
             <span class="input-group-text" id="inputGroup-sizing-default">Course 6</span>
           </div>
-          <%= text_field_tag 'terms[course6][]', '', class: "form-control" %>
+          <%= text_field_tag 'terms[course6][]', '', class: "form-control", id: "course-input-field"%>
         </div>
       </div>
 
@@ -85,7 +84,7 @@
           <div class="input-group-prepend" id="course">
             <span class="input-group-text" id="inputGroup-sizing-default">Course 7</span>
           </div>
-          <%= text_field_tag 'terms[course7][]', '', class: "form-control" %>
+          <%= text_field_tag 'terms[course7][]', '', class: "form-control", id: "course-input-field"%>
         </div>
       </div>
 

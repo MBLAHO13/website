@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  post 'view/degree'
+  get 'view/degree'
 
   get 'view/tree'
 
